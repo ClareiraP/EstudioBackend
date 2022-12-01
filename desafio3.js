@@ -32,10 +32,10 @@ app.get('/productos',function(rep,res) {
 })
 
 const puerto=8080;
-
+/*
 app.listen(puerto, () => {
     console.log(productos)
-  });
+  });*/
 
 const min=0;
 const max=productos.length;
@@ -50,10 +50,10 @@ prodRan=productosRandom(min,max)
   app.get('/productosRandom',function(rep,res) {
     res.send(prodRan);
 })
-/*
+
 app.listen(puerto, () => {
-    console.log(prodRan)
+    console.log(productos[prodRan])
   });
-*/
+
 
 app.on ("error", error => console.log('Error'));
