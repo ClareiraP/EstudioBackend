@@ -16,8 +16,8 @@
   },
   "homepage": "https://github.com/ClareiraP/EstudioBackend#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "toml": "^3.0.0"
   },
-  "devDependencies": {},
   "description": ""
 }

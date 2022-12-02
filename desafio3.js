@@ -1,31 +1,33 @@
+const fs = require('fs');
 const express = require('express');
 const app =express();
 
 let productos = [
-{
-    id: 1,
-    nombre: 'Patata',
-    precio: 1,
-    imagen: 'patata.jpg'
-},
-{
-    id: 2,
-    nombre: 'Cebolla',
-    precio: 1.2,
-    imagen: 'cebolla.jpg'
-},
-{
-    id: 3,
-    nombre: 'Calabacin',
-    precio: 2.1,
-    imagen: 'calabacin.jpg'
-},
-{
-    id: 4,
-    nombre: 'Fresas',
-    precio: 0.6,
-    imagen: 'fresas.jpg'
-}];
+    {
+        id: 1,
+        nombre: 'Patata',
+        precio: 1,
+        imagen: 'patata.jpg'
+    },
+    {
+        id: 2,
+        nombre: 'Cebolla',
+        precio: 1.2,
+        imagen: 'cebolla.jpg'
+    },
+    {
+        id: 3,
+        nombre: 'Calabacin',
+        precio: 2.1,
+        imagen: 'calabacin.jpg'
+    },
+    {
+        id: 4,
+        nombre: 'Fresas',
+        precio: 0.6,
+        imagen: 'fresas.jpg'
+    }];
+    
 
 app.get('/productos',function(rep,res) {
     res.send(productos);
@@ -38,7 +40,7 @@ app.listen(puerto, () => {
   });*/
 
 const min=0;
-const max=productos.length;
+const max=productos.length-1;
 
 const productosRandom =function(min,max){
     return Math.floor(Math.random()*(max-min))
