@@ -1,23 +1,19 @@
 {
-  "name": "estudiobackend",
+  "name": "api",
   "version": "1.0.0",
-  "main": "desafio1.js",
+  "main": "desafio4.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ClareiraP/EstudioBackend.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ClareiraP/EstudioBackend/issues"
-  },
-  "homepage": "https://github.com/ClareiraP/EstudioBackend#readme",
   "dependencies": {
     "express": "^4.18.2",
     "toml": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   },
   "description": ""
 }
