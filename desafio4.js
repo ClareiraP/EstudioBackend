@@ -1,14 +1,15 @@
 const express =require('express');
-//const {Router} =express;
+const {Router} =express;
 const app =express();
-//const appRouter =Router();
+const prodRouter =Router();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-//app.use(express.static('publico'));
+app.use(express.json());
+app.use('/api',prodRouter)
 
-//const productos = [];
+
 const productos = [
     {
         id: 1,
@@ -36,45 +37,50 @@ const productos = [
     }];
     
 
-app.get('/api/productos',(req,res) =>{
+prodRouter.get('/productos',(req,res) =>{
     res.json(productos)
+
 });
 
-app.get('/api/productos/:id',(req,res) =>{
+prodRouter.get('/productos/:id',(req,res) =>{
 
     const id= req.params.id;
-    res.json(productos[id])
+    const prodId=productos.find(item=>item.id===id);
+    res.json(prodId);
+
 })
 
-
-app.post('/api/productos',(req,res) =>{
+prodRouter.post('/productos',(req,res) =>{
     const prod= req.body; 
     productos.push(prod);   
-    res.status(200).json({added: prod})
+
+    res.status(200).json({productos})
+
+    const cantidadP=productos.length;
+    console.log(cantidadP);
 })
 
 
-app.put('/api/productos/:id',(req,res) =>{
+prodRouter.put('/productos/:id',(req,res) =>{
     
-    const id= req.params;
-    const prod=req.body;
+    const {id}= req.params;
+    const {prodRep}=req.body;
     const index = id - 1;
+
+    productos[index]=prodRep;
     
-    productos[index]=prod;
-    res.json(productos[index])
+    res.json[200].json({prodRep});
 })
 
-
-app.delete('/api/productos/:id',(req,res) =>{
+prodRouter.delete('productos/:id',(req,res) =>{
     
-    const id= req.params;
+    const {id}= req.params;
+    const {prodDel}=req.body;
     const index = id - 1;
-    
+
     delete productos[index];
-    res.json(productos[index])
+    res.json[200].json(productos[index]);
 })
-
-//app.use('/api/productos',appRouter);
 
 const puerto=8080;
 
