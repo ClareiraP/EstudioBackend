@@ -1,0 +1,23 @@
+
+<%- include('./header.ejs') %>
+<body>
+  <div class="container">
+    <h1 style="color:blue">Best players!</h1>
+    <form action="/productos" method="post">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">nombre: </label>
+        <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombre">
+      </div>
+      <div class="mb-3">
+        <label for="precio" class="form-label">precio: </label>
+        <input type="number" class="form-control" id="precio" name="precio" aria-describedby="precio">
+      </div>
+      <div class="mb-3">
+        <label for="imagen" class="form-label">imagen: </label>
+        <input type="text" class="form-control" id="imagen" name="imagen" aria-describedby="imagen">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <%- include('./table.ejs') %>
+ </body>
