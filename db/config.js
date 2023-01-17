@@ -11,7 +11,7 @@ module.exports = {
     sqlite: {
         client: 'sqlite3',
         connection: {
-            filename: './db/sql/chat.sqlite'
+            filename: './db/sqlite/chat.sqlite'
         }
     }
     
