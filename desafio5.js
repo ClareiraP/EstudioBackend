@@ -1,3 +1,4 @@
+
 const express =require('express');
 const {Router} =express;
 const app =express();
@@ -14,7 +15,7 @@ const productos = [];
 
 
 app.get('/', (req, res) => {
-  res.render('form.ejs');
+  res.render('form.ejs',{productos});
 });
 
 app.get('/productos', (req, res) => {
@@ -31,5 +32,5 @@ app.post('/productos',  (req, res) => {
 
 const puerto=8080;
 
-app.listen(puerto,() => console.log(productos))
+app.listen(puerto,(req,res) => console.log('Escuchando'))
 app.on ('error', error => console.log('Error'));

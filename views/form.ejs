@@ -2,8 +2,8 @@
 <%- include('./header.ejs') %>
 <body>
   <div class="container">
-    <h1 style="color:blue">Best players!</h1>
-    <form action="/productos" method="post">
+    <h1 style="color:blue">Productos</h1>
+    <form action="/" method="post">
       <div class="mb-3">
         <label for="nombre" class="form-label">nombre: </label>
         <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombre">
@@ -20,4 +20,5 @@
     </form>
   </div>
   <%- include('./table.ejs') %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
  </body>
