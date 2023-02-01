@@ -32,13 +32,12 @@ class ProductController {
       };
 
     saveNewProduct = async (req,res, next) => {
-        const { title, price, imageUrl, stock, description } = req.body
+        const { title, price, image, stock, description } = req.body
         try{
-           /* if (!title || !price || !imageUrl, !stock, !description ) return null; */
             const newProduct = {
                 title,
                 price,
-                imageUrl,
+                image,
                 stock,
                 description
             }
