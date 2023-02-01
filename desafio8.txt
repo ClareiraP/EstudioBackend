@@ -1,0 +1,96 @@
+DESAFIO 8                                     
+
+- Abri el ejecutable mongod
+- Abri una terminal y luego ejecuté "mongod --dbpath "DESAFIO""
+- Ejecuté mongo
+- Cree la base de datos "ecommerce" con messages y products.
+- use ecommerce
+- db.createCollection("messages")
+- db.createCollection("products")
+
+- 1) Agregar 10 documentos con valores distintos a las colecciones mensajes y productos.
+  db.products.insertMany([
+{
+ "name": "papas", 
+ "price" : 120, 
+ "image": "papas.jpg"
+}
+{
+ "name": "tomates", 
+ "price": 300, 
+ "image": "tom.jpg" 
+}
+{
+ "name": "lechuga", 
+ "price": 200, 
+ "image": "lech.jpg"
+}
+{
+ "name" : "cebolla", 
+ "price" : 170, 
+ "image" : "cebolla.jpg"
+}
+{
+ "name": "palta", 
+ "price": 2400, 
+ "image": "palta.jpg"
+}
+])
+
+  db.messages.insertMany([
+     {"user": "croca", "message": "Hola! ", "date": ISODate()}
+     {"user": "acastillo", "message": "como va?", "date" : ISODate()}
+     {"user": "mlacka", "message": " Todo bien!", "date": ISODate()}
+     {"user": "acastillo", "message": "Genial!!", "date": ISODate()}
+     {"user": "croca", "message": "que hacen por acá?", "date": ISODate()}
+])
+
+
+- Para listar los documentos de las colecciones: 
+db.messages.find()  y  db.products.find()
+
+- Para ver la cantidad de documentos en cada colección:
+db.messages.estimatedDocumentCount() y db.products.estimatedDocumentCount()
+
+- En el punto de realizar un CRUD:
+	- para agregar un producto
+	 db.products.insertOne({"name": "pera", "price": 600, "image": "pera.jpg"})
+
+	- para realizar consultas especificas:
+    		- productos con precio menor a 1000 pesos
+		 db.products.find({price: {$lt: 1000}}, {name: 1, _id: 0})
+    		- productos con precio entre los 1000 a 3000 pesos
+		 db.products.find({$and: [{price: {$gte: 1000}}, {price: {$lte: 3000}}]}, {name: 1, _id: 0})
+    		- productos con precio mayor a 3000 pesos
+		 db.products.find({price: {$gt: 3000}}, {name: 1, _id: 0})
+    		- consulta que traiga sólo el nombre del tercer producto más barato
+		 db.products.find({}, {name: 1, _id: 0}).sort({price: 1}).skip(2).limit(1)
+
+	- para realizar una actualización sobre los productos, agregando el stock=100
+    	    db.products.updateMany({}, {$set: {stock: 100}})
+	- para cambiar el stock a cero de los productos con precio > a 4000
+	    db.products.updateMany({price: {$gt: 4000}}, {$set: {stock: 0}})
+	- para borrar los productos con precio < a 1000
+    	    db.products.deleteMany({price: {$lt: 1000}})
+
+- Para crear un usuario 'pepe' con clave 'asd456', que lea solo la base de datos ecommerce
+	- use admin
+	- db.createUser(
+        {
+        user: "pepe",
+        pwd: "asd456",
+        roles: [
+            { role: "read", db: "ecommerce" }
+        ]}
+    )
+ - para hacer el test, en otra terminal
+    mongo -u pepe -p prueba (me da error)
+    mongo -u pepe -p asd456 (esta bien)
+ - para probar si puedo insertar un producto
+    use ecommerce
+    db.products.insertOne({
+        "name": "banana",23:17 24/1/2023
+	  "price": 530,
+        "image": "banana.jpg"        
+    })  (me da que no puedo agregar el producto)
+ 
