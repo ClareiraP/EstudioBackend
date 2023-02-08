@@ -1,0 +1,25 @@
+<h2 class="text-uppercase mb-4">Tabla de productos</h2>
+<% if (!products.length) {%>
+    <h4>No hay productos!</h4>
+<% } else { %>  
+    <table class="table table-dark table-hover align-middle">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Foto</th>
+        </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(prod => { %>
+                <tr>
+                    <th scope="row"><%= prod.id %></th>
+                    <td><%= prod.title %></td>
+                    <td><%= prod.price %></td>
+                    <td><img class="img-fluid" src="<%= prod.thumbnail %>" alt="<%= prod.title %>" width="75rem"></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+<% } %> 

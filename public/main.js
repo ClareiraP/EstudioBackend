@@ -1,6 +1,4 @@
-
 const socket = io()
-
 const prodForm = document.getElementById("productsForm")
 const nameInput = document.getElementById("nombre");
 const priceInput = document.getElementById("precio");
@@ -34,9 +32,6 @@ socket.on('products', (products) => {
         })  
 });
 
-//Chat
-
-//CHAT
 const formChat = document.getElementById("form-chat");
 const inputEmail = document.getElementById("username");
 const inputText = document.getElementById("text");

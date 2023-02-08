@@ -1,0 +1,15 @@
+<% if (!messages.length) { %> 
+    <h4>No hay mensajes para mostrar</h4>
+<% } else { %>
+    <h4>Porcentaje de compresion de mensajes: <%= compression %>%</h4>
+    <% messages.forEach( data => { %> 
+        <div class="d-flex">
+            <img src="<%= data.author.avatar %>"  alt="<%= data.author.nombre %>" width="30px" height="30px">
+            <p class="ms-2">
+                <span class="text-primary fw-bold"><%= data.author.email  %>  </span>
+                [<span class="text-danger"><%= data.date %></span>]
+                : <span class="text-success fst-italic"><%= data.text %></span>
+            </p>
+        </div>
+    <% }) %> 
+<% } %> 
