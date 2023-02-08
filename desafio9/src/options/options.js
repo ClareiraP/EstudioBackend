@@ -1,4 +1,4 @@
-import __dirname from "../utils.js";
+import __dirname from "../../utils.js";
 
 export const URLMongo = "mongodb://127.0.0.1:27017/ecommerce";
 
