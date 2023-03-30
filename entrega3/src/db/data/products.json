@@ -1,0 +1,20 @@
+[
+    
+  {
+    "id": "95506815-cedc-465e-86dc-e7fe5eeee50d",
+    "timestamp": 1668539073196,
+    "title": "producto1",
+    "price": 500,
+    "imageUrl": "http://imagen1.png",
+    "stock": 5,
+    "description": "Esto es el producto 1"
+  },
+  {
+    "id": "6fb37cea-213d-40fb-b515-5ee78febf794",
+    "title": "producto2",
+    "price": 500,
+    "imageUrl": "http://imagen2.png",
+    "stock": 5,
+    "description": "Esto es el producto 2"
+  }
+]
