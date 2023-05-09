@@ -1,0 +1,22 @@
+<h1 class="table" style="font-size: revert; margin-top: 50px; display: flex; justify-content: center;">Productos Cargados</h1>
+
+{{#if products.length}}
+    <div>
+        <table style="margin: 30px; display: flex; justify-content: center; background-color: #e2e6ea;">
+            <tr style="font-size: 25px;">
+                <th style="width: 450px;">Nombre</th>
+                <th style="width: 450px;">Precio</th>
+                <th style="width: 450px;">Imagen</th>
+            </tr>
+    {{#each products}}
+            <tr style="display: flex; justify-content: space-around; margin-top: 30px;">
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td><img width="50" src={{this.thumbnail}} alt={{this.id}}></td>
+            </tr>
+    {{/each}}
+        </table>
+    </div>
+    {{else}}
+<h3 style="margin-top: 50px; display: flex; justify-content: center; font-style: italic; color: red; font-size: initial;"> Aún no hay productos cargados</h3>
+{{/if}}
