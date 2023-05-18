@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <!-- Agrega aquí los enlaces a tus hojas de estilo CSS -->
+  </head>
+  <body>
+    <div id="chat">
+      <h1>Chat</h1>
+      <ul id="chat-messages"></ul>
+      <form id="chat-form">
+        <input type="text" id="chat-message" placeholder="Escribe aquí tu mensaje...">
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+  </body>
+</html>

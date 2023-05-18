@@ -1,0 +1,6 @@
+name: insignias
+services:
+  web:
+    start: npm start
+    env:
+      NODE_ENV: production
